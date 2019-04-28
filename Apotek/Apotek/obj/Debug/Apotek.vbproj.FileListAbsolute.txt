@@ -16,3 +16,21 @@ C:\Users\Jason\Documents\Visual Studio 2013\Projects\Apotek\Apotek\obj\Debug\Apo
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Apotek\Apotek\obj\Debug\Apotek.FormSatuan.resources
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Apotek\Apotek\obj\Debug\Apotek.FormObat.resources
 C:\Users\Jason\Documents\Visual Studio 2013\Projects\Apotek\Apotek\obj\Debug\Apotek.FormPenjualan.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\bin\Debug\Apotek.exe.config
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.exe
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.xml
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.pdb
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\bin\Debug\Apotek.exe
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\bin\Debug\Apotek.pdb
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\bin\Debug\Apotek.xml
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\bin\Debug\MySql.Data.dll
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.vbprojResolveAssemblyReference.cache
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormObat.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormPenjualan.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormSatuan.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormSediaan.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormProduksi.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormGolongan.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormKategori.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.Resources.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.vbproj.GenerateResource.Cache

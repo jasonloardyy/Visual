@@ -4,12 +4,14 @@ Public Class FormObat
 
     Public mode As String
     Public id_data As String
+    Public from As String
 
     Private Sub FormObat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
         isigrid()
         isicb()
         reset()
+        from = ""
     End Sub
 
     Sub isigrid()
@@ -303,5 +305,29 @@ Public Class FormObat
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         pencarian()
+    End Sub
+
+    Sub gridtoformpenjualan()
+        Dim baris As Integer
+        With dgv
+            baris = .CurrentRow.Index
+            FormPenjualan.TextBox3.Text = .Item(0, baris).Value
+            FormPenjualan.TextBox4.Text = .Item(1, baris).Value
+            FormPenjualan.TextBox5.Text = .Item(8, baris).Value
+            FormPenjualan.TextBox7.Text = .Item(9, baris).Value
+            FormPenjualan.TextBox6.Text = "1"
+        End With
+    End Sub
+
+
+    Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
+        If from = "penjualan" Then
+            Dim nplh As Integer
+            nplh = MsgBox("Masukkan obat " & TextBox3.Text & " (" & TextBox2.Text & ") ?", 48 + 4 + 256, "Konfirmasi")
+            If nplh = 6 Then
+                gridtoformpenjualan()
+                Me.Close()
+            End If
+        End If
     End Sub
 End Class
