@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-04-28 23:42:32
+Date: 2019-04-30 11:10:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,7 +22,8 @@ DROP TABLE IF EXISTS `antrian`;
 CREATE TABLE `antrian` (
   `id_antrian` varchar(4) NOT NULL,
   `id_penjualan` varchar(13) NOT NULL,
-  `nama` varchar(16) NOT NULL
+  `nama` varchar(16) DEFAULT NULL,
+  `total` decimal(9,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -82,7 +83,8 @@ CREATE TABLE `keranjang` (
 -- ----------------------------
 -- Records of keranjang
 -- ----------------------------
-INSERT INTO `keranjang` VALUES ('0001', '1', 'DKL01001', 'FLUDEN', '1', '10000', '10000');
+INSERT INTO `keranjang` VALUES ('0001', '1', 'BBI01002', 'SANMOL', '30', '15000', '450000');
+INSERT INTO `keranjang` VALUES ('0001', '2', 'BBI01002', 'SANMOL', '20', '15000', '300000');
 
 -- ----------------------------
 -- Table structure for `obat`
@@ -115,13 +117,13 @@ DROP TABLE IF EXISTS `penjualan`;
 CREATE TABLE `penjualan` (
   `id_penjualan` varchar(13) NOT NULL,
   `tanggal` date NOT NULL,
-  `jenis_penjualan` char(1) NOT NULL,
   PRIMARY KEY (`id_penjualan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of penjualan
 -- ----------------------------
+INSERT INTO `penjualan` VALUES ('TRX1556508453', '2019-04-29');
 
 -- ----------------------------
 -- Table structure for `penjualan_detail`
@@ -137,6 +139,13 @@ CREATE TABLE `penjualan_detail` (
 -- ----------------------------
 -- Records of penjualan_detail
 -- ----------------------------
+INSERT INTO `penjualan_detail` VALUES ('TRX1556506928', 'BBI01002', '15000', '20');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556506928', 'BBI01002', '15000', '20');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556506928', 'DKL01001', '10000', '3');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556508102', 'DKL01001', '10000', '4');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556508077', 'BBI01002', '15000', '1');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556508453', 'DKL01001', '10000', '5');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556508453', 'BBI01002', '15000', '6');
 
 -- ----------------------------
 -- Table structure for `produksi`
@@ -189,6 +198,21 @@ INSERT INTO `sediaan` VALUES ('02', 'KAPSUL LUNAK');
 INSERT INTO `sediaan` VALUES ('23', 'POWDER');
 INSERT INTO `sediaan` VALUES ('24', 'BEDAK');
 INSERT INTO `sediaan` VALUES ('43', 'INJEKSI');
+
+-- ----------------------------
+-- Table structure for `tmp_stok`
+-- ----------------------------
+DROP TABLE IF EXISTS `tmp_stok`;
+CREATE TABLE `tmp_stok` (
+  `tmp_id_obat` char(8) NOT NULL,
+  `tmp_stok_obat` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tmp_stok
+-- ----------------------------
+INSERT INTO `tmp_stok` VALUES ('BBI01002', '930');
+INSERT INTO `tmp_stok` VALUES ('DKL01001', '180');
 DROP TRIGGER IF EXISTS `update_counter_golongan`;
 DELIMITER ;;
 CREATE TRIGGER `update_counter_golongan` AFTER INSERT ON `obat` FOR EACH ROW BEGIN
