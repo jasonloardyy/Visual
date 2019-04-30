@@ -1,14 +1,27 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Globalization
 
 Public Class FormPenjualan
-
     Public no As Integer
+    Public id_data As String
+    Public total As String
+    Public totalantrian As String
     Private Sub FormPenjualan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("en-US")
+        System.Threading.Thread.CurrentThread.CurrentUICulture = New System.Globalization.CultureInfo("en-US")
         koneksi()
-        no_antrian()
-        TextBox1.Text = "TRX" & CLng(DateTime.UtcNow.Subtract(New DateTime(1970, 1, 1)).TotalSeconds)
-        isigridKeranjang()
+        isigridantrian()
+        reset()
     End Sub
+
+    Sub reset()
+        baru()
+        TextBox8.Clear()
+        TextBox1.Clear()
+        GroupBox2.Enabled = False
+    End Sub
+
 
     Sub isigridKeranjang()
         Dim query As String = "SELECT * FROM keranjang where id_antrian = '" & TextBox8.Text & "' ORDER BY no desc"
@@ -21,6 +34,7 @@ Public Class FormPenjualan
         If dgvkeranjang.RowCount > 0 Then
             judulgridKeranjang()
         End If
+        grandtotal()
     End Sub
 
     Sub judulgridKeranjang()
@@ -44,11 +58,26 @@ Public Class FormPenjualan
         dgvkeranjang.ReadOnly = True
     End Sub
 
+    Sub baru()
+        GroupBox2.Enabled = True
+        no_antrian()
+        queryresetkeranjang()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox7.Clear()
+        TextBox5.Clear()
+        TextBox6.Clear()
+        total = "0"
+        Label8.Text = "Rp. 0"
+    End Sub
+
+
     Sub no_antrian()
-        cmd = New MySqlCommand("select * from antrian", konek)
+        cmd = New MySqlCommand("select coalesce(MAX(id_antrian), 0) from antrian", konek)
         dr = cmd.ExecuteReader
         dr.Read()
-        If Not dr.HasRows Then
+        If dr.GetString(0) = 0 Then
             TextBox8.Text = "0001"
         Else
             Dim hitung As Integer = dr.GetString(0) + 1
@@ -63,6 +92,7 @@ Public Class FormPenjualan
             End If
         End If
         dr.Close()
+        TextBox1.Text = "TRX" & CLng(DateTime.UtcNow.Subtract(New DateTime(1970, 1, 1)).TotalSeconds)
     End Sub
 
     Sub no_urutkeranjang()
@@ -82,12 +112,50 @@ Public Class FormPenjualan
         FormObat.from = "penjualan"
     End Sub
 
+    Sub grandtotal()
+        cmd = New MySqlCommand("select coalesce(sum(subtotal),0) from keranjang where id_antrian = '" & TextBox8.Text & "'", konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        total = FormatNumber(dr.GetString(0), 0)
+        dr.Close()
+        Label8.Text = "Rp. " & total
+    End Sub
+
+    Sub hitungtotalAntrian()
+        cmd = New MySqlCommand("select coalesce(sum(total),0) from antrian", konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        totalantrian = FormatNumber(dr.GetString(0), 0)
+        dr.Close()
+        Label9.Text = "Total = Rp. " & totalantrian
+    End Sub
+
+    Sub tambah_tmp_stok()
+        Dim stokbaru As Integer = Convert.ToInt32(TextBox5.Text) - Convert.ToInt32(TextBox6.Text)
+        cmd = New MySqlCommand("SELECT * FROM tmp_stok WHERE tmp_id_obat = '" & TextBox3.Text & "'", konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            dr.Close()
+            Dim strEdit As String = "UPDATE tmp_stok SET tmp_stok_obat = tmp_stok_obat - " & TextBox6.Text & " " _
+                              & "WHERE tmp_id_obat = '" & TextBox3.Text & "'"
+            query(strEdit)
+        Else
+            dr.Close()
+            Dim strsimpan As String = "INSERT INTO tmp_stok" _
+                                & " VALUES ('" & TextBox3.Text & "','" & stokbaru & "')"
+            query(strsimpan)
+        End If
+
+    End Sub
+
     Sub ToKeranjang()
         no_urutkeranjang()
         Dim subtotal As Decimal = Convert.ToDecimal(TextBox6.Text) * Convert.ToDecimal(TextBox7.Text)
         Dim strsimpan As String = "INSERT INTO keranjang" _
                                 & " VALUES ('" & TextBox8.Text & "','" & no & "','" & TextBox3.Text & "','" & TextBox4.Text & "','" & TextBox6.Text & "','" & TextBox7.Text & "','" & subtotal & "')"
         query(strsimpan)
+        tambah_tmp_stok()
         isigridKeranjang()
         TextBox3.Clear()
         TextBox4.Clear()
@@ -107,8 +175,8 @@ Public Class FormPenjualan
         End If
     End Sub
 
-    Sub querytruncatekeranjang()
-        Dim strreset As String = "TRUNCATE TABLE keranjang"
+    Sub queryresetkeranjang()
+        Dim strreset As String = "delete from keranjang where id_antrian = '" & TextBox8.Text & "'"
         query(strreset)
         dgvkeranjang.DataSource = Nothing
     End Sub
@@ -117,7 +185,180 @@ Public Class FormPenjualan
         Dim npilih As Integer
         npilih = MsgBox("Reset keranjang ?", 48 + 4 + 256, "Konfirmasi")
         If npilih = 6 Then
-            querytruncatekeranjang()
+            queryresetkeranjang()
+        End If
+    End Sub
+
+    Private Sub dgvkeranjang_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvkeranjang.CellEnter
+        id_data = dgvkeranjang.Item(1, dgvkeranjang.CurrentRow.Index).Value
+    End Sub
+
+    Sub queryhapus()
+        Dim strhapus As String = "DELETE FROM keranjang WHERE id_antrian = '" & TextBox8.Text & "' AND no = '" & id_data & "'"
+        query(strhapus)
+        isigridKeranjang()
+        cmd = New MySqlCommand("SELECT * FROM keranjang WHERE id_antrian = '" & TextBox8.Text & "'", konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            dr.Close()
+        Else
+            dr.Close()
+            dgvkeranjang.DataSource = Nothing
+        End If
+
+    End Sub
+
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim nhps As Integer
+        nhps = MsgBox("Hapus obat " & dgvkeranjang.Item(3, dgvkeranjang.CurrentRow.Index).Value & " dari keranjang ?", 48 + 4 + 256, "Konfirmasi")
+        If nhps = 6 Then
+            queryhapus()
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        baru()
+    End Sub
+    Sub batal()
+        Dim strhapus As String = "DELETE FROM antrian WHERE id_antrian = '" & TextBox8.Text & "';DELETE FROM keranjang WHERE id_antrian = '" & TextBox8.Text & "'"
+        query(strhapus)
+        cmd = New MySqlCommand("SELECT * FROM antrian WHERE id_antrian = '" & TextBox8.Text & "'", konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            dr.Close()
+        Else
+            dr.Close()
+            dgvantrian.DataSource = Nothing
+        End If
+        reset()
+        isigridantrian()
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Dim npilih As Integer
+        npilih = MsgBox("Batalkan penjualan ?", 48 + 4 + 256, "Konfirmasi")
+        If npilih = 6 Then
+            batal()
+        End If
+    End Sub
+
+    Sub isigridantrian()
+        Dim query As String = "SELECT * FROM antrian"
+        Dim da As New MySqlDataAdapter(query, konek)
+        Dim ds As New DataSet()
+        If da.Fill(ds) Then
+            dgvantrian.DataSource = ds.Tables(0)
+            dgvantrian.Refresh()
+        End If
+        If dgvantrian.RowCount > 0 Then
+            judulgridantrian()
+        End If
+        hitungtotalAntrian()
+    End Sub
+
+    Sub judulgridantrian()
+        Dim objAlternatingCellStyle As New DataGridViewCellStyle()
+        dgvantrian.AlternatingRowsDefaultCellStyle = objAlternatingCellStyle
+        Dim style As DataGridViewCellStyle = dgvantrian.Columns(0).DefaultCellStyle
+        dgvantrian.Columns(0).HeaderText = "No."
+        dgvantrian.Columns(2).HeaderText = "Nama Pelanggan"
+        dgvantrian.Columns(3).HeaderText = "Total"
+        dgvantrian.Columns(0).Width = 35
+        dgvantrian.Columns(2).Width = 115
+        dgvantrian.Columns(3).Width = 65
+        dgvantrian.Columns(1).Visible = False
+        objAlternatingCellStyle.BackColor = Color.AliceBlue
+        dgvantrian.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgvantrian.ReadOnly = True
+    End Sub
+
+    Sub querytambahantrian()
+        cmd = New MySqlCommand("SELECT * FROM antrian WHERE id_antrian = '" & TextBox8.Text & "'", konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            dr.Close()
+            Dim strEdit As String = "UPDATE antrian SET nama = '" & TextBox2.Text.ToUpper & "',total = '" & Convert.ToDecimal(total) & "'" _
+                              & " WHERE id_antrian = '" & TextBox8.Text & "'"
+            query(strEdit)
+        Else
+            dr.Close()
+            Dim strsimpan As String = "INSERT INTO antrian" _
+                                & " VALUES ('" & TextBox8.Text & "','" & TextBox1.Text & "','" & TextBox2.Text & "','" & Convert.ToDecimal(total) & "')"
+            query(strsimpan)
+        End If
+        isigridantrian()
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim npilih As Integer
+        npilih = MsgBox("Masukkan ke antrian ?", 48 + 4 + 256, "Konfirmasi")
+        If npilih = 6 Then
+            querytambahantrian()
+            reset()
+        End If
+
+    End Sub
+
+    Sub detailantrian()
+        cmd = New MySqlCommand("SELECT * FROM antrian WHERE id_antrian = '" & dgvantrian.Item(0, dgvantrian.CurrentRow.Index).Value & "'", konek)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        If dr.HasRows Then
+            TextBox8.Text = dr.GetString(0)
+            TextBox1.Text = dr.GetString(1)
+            TextBox2.Text = dr.GetString(2)
+            dr.Close()
+            isigridKeranjang()
+        Else
+            dr.Close()
+        End If
+    End Sub
+
+
+    Private Sub dgvantrian_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvantrian.CellDoubleClick
+        baru()
+        detailantrian()
+    End Sub
+    Sub truncateantrian()
+        Dim strhapus As String = "truncate table antrian;truncate table keranjang"
+        query(strhapus)
+        dgvantrian.DataSource = Nothing
+        Label9.Text = "Total = Rp. 0"
+        reset()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim npilih As Integer
+        npilih = MsgBox("Bersihkan antrian ?", 48 + 4 + 256, "Konfirmasi")
+        If npilih = 6 Then
+            truncateantrian()
+        End If
+    End Sub
+
+    Sub simpanpenjualandetail()
+        Dim strsimpan As String = "INSERT INTO penjualan_detail (id_penjualan,id_obat,harga,qty)" _
+                                & " SELECT '" & TextBox1.Text & "',id_obat,harga,qty FROM keranjang WHERE id_antrian = '" & TextBox8.Text & "'"
+        query(strsimpan)
+    End Sub
+
+    Sub simpanpenjualan()
+        Dim strsimpan As String = "INSERT INTO penjualan" _
+                                & " VALUES ('" & TextBox1.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')"
+        query(strsimpan)
+        MsgBox("Penjualan berhasil!")
+    End Sub
+
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim npilih As Integer
+        npilih = MsgBox("Proses penjualan ?", 48 + 4 + 256, "Konfirmasi")
+        If npilih = 6 Then
+            simpanpenjualandetail()
+            simpanpenjualan()
+            batal()
         End If
     End Sub
 End Class

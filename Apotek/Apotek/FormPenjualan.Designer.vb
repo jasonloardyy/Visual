@@ -26,8 +26,9 @@ Partial Class FormPenjualan
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvantrian = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -58,7 +59,7 @@ Partial Class FormPenjualan
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvantrian, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgvkeranjang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,26 +72,26 @@ Partial Class FormPenjualan
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Button6)
         Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.dgvantrian)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 437)
+        Me.GroupBox1.Size = New System.Drawing.Size(290, 437)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Antrian"
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(80, 372)
+        Me.Label9.Location = New System.Drawing.Point(6, 372)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(114, 13)
+        Me.Label9.Size = New System.Drawing.Size(278, 13)
         Me.Label9.TabIndex = 3
-        Me.Label9.Text = "Total : Rp. 10.000.000"
+        Me.Label9.Text = "Total : Rp. 999.999.999"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(119, 405)
+        Me.Button6.Location = New System.Drawing.Point(209, 405)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 2
@@ -106,16 +107,18 @@ Partial Class FormPenjualan
         Me.Button3.Text = "New"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'dgvantrian
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(188, 350)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvantrian.AllowUserToAddRows = False
+        Me.dgvantrian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvantrian.Location = New System.Drawing.Point(6, 19)
+        Me.dgvantrian.Name = "dgvantrian"
+        Me.dgvantrian.Size = New System.Drawing.Size(278, 350)
+        Me.dgvantrian.TabIndex = 0
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button9)
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.GroupBox5)
         Me.GroupBox2.Controls.Add(Me.Button5)
@@ -124,12 +127,21 @@ Partial Class FormPenjualan
         Me.GroupBox2.Controls.Add(Me.dgvkeranjang)
         Me.GroupBox2.Controls.Add(Me.GroupBox4)
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
-        Me.GroupBox2.Location = New System.Drawing.Point(218, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(308, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(650, 437)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Penjualan"
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(486, 405)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(75, 23)
+        Me.Button9.TabIndex = 11
+        Me.Button9.Text = "Batal"
+        Me.Button9.UseVisualStyleBackColor = True
         '
         'Button7
         '
@@ -152,13 +164,14 @@ Partial Class FormPenjualan
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(413, 16)
+        Me.Label8.Location = New System.Drawing.Point(12, 16)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(214, 31)
+        Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label8.Size = New System.Drawing.Size(618, 31)
         Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Rp. 10.000.000"
+        Me.Label8.Text = "Rp. 999,999,999"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button5
         '
@@ -189,6 +202,7 @@ Partial Class FormPenjualan
         '
         'dgvkeranjang
         '
+        Me.dgvkeranjang.AllowUserToAddRows = False
         Me.dgvkeranjang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvkeranjang.Location = New System.Drawing.Point(6, 249)
         Me.dgvkeranjang.Name = "dgvkeranjang"
@@ -406,7 +420,7 @@ Partial Class FormPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(880, 459)
+        Me.ClientSize = New System.Drawing.Size(970, 459)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -415,11 +429,9 @@ Partial Class FormPenjualan
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormPenjualan"
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvantrian, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         CType(Me.dgvkeranjang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
@@ -437,7 +449,7 @@ Partial Class FormPenjualan
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvantrian As System.Windows.Forms.DataGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents dgvkeranjang As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
@@ -463,4 +475,5 @@ Partial Class FormPenjualan
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents Button9 As System.Windows.Forms.Button
 End Class
