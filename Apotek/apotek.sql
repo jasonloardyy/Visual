@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2019-04-30 11:10:10
+Date: 2019-05-05 14:14:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -83,8 +83,6 @@ CREATE TABLE `keranjang` (
 -- ----------------------------
 -- Records of keranjang
 -- ----------------------------
-INSERT INTO `keranjang` VALUES ('0001', '1', 'BBI01002', 'SANMOL', '30', '15000', '450000');
-INSERT INTO `keranjang` VALUES ('0001', '2', 'BBI01002', 'SANMOL', '20', '15000', '300000');
 
 -- ----------------------------
 -- Table structure for `obat`
@@ -107,8 +105,8 @@ CREATE TABLE `obat` (
 -- ----------------------------
 -- Records of obat
 -- ----------------------------
-INSERT INTO `obat` VALUES ('BBI01002', 'SANMOL', 'B', 'B', 'I', '01', '12', '2033-07-14', '1000', '15000');
-INSERT INTO `obat` VALUES ('DKL01001', 'FLUDEN', 'D', 'K', 'L', '01', '12', '2019-04-15', '200', '10000');
+INSERT INTO `obat` VALUES ('BBI01002', 'SANMOL', 'B', 'B', 'I', '01', '12', '2033-07-14', '973', '15000');
+INSERT INTO `obat` VALUES ('DKL01001', 'FLUDEN', 'D', 'K', 'L', '01', '12', '2019-04-15', '32', '10000');
 
 -- ----------------------------
 -- Table structure for `penjualan`
@@ -124,6 +122,11 @@ CREATE TABLE `penjualan` (
 -- Records of penjualan
 -- ----------------------------
 INSERT INTO `penjualan` VALUES ('TRX1556508453', '2019-04-29');
+INSERT INTO `penjualan` VALUES ('TRX1556594778', '2019-04-30');
+INSERT INTO `penjualan` VALUES ('TRX1556594925', '2019-04-30');
+INSERT INTO `penjualan` VALUES ('TRX1556594989', '2019-04-30');
+INSERT INTO `penjualan` VALUES ('TRX1556595033', '2019-04-30');
+INSERT INTO `penjualan` VALUES ('TRX1557034004', '2019-05-05');
 
 -- ----------------------------
 -- Table structure for `penjualan_detail`
@@ -146,6 +149,13 @@ INSERT INTO `penjualan_detail` VALUES ('TRX1556508102', 'DKL01001', '10000', '4'
 INSERT INTO `penjualan_detail` VALUES ('TRX1556508077', 'BBI01002', '15000', '1');
 INSERT INTO `penjualan_detail` VALUES ('TRX1556508453', 'DKL01001', '10000', '5');
 INSERT INTO `penjualan_detail` VALUES ('TRX1556508453', 'BBI01002', '15000', '6');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556594778', 'BBI01002', '15000', '10');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556594925', 'DKL01001', '10000', '200');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556594989', 'BBI01002', '15000', '10');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556594989', 'DKL01001', '10000', '15');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556595033', 'BBI01002', '15000', '2');
+INSERT INTO `penjualan_detail` VALUES ('TRX1556595033', 'DKL01001', '10000', '3');
+INSERT INTO `penjualan_detail` VALUES ('TRX1557034004', 'BBI01002', '15000', '5');
 
 -- ----------------------------
 -- Table structure for `produksi`
@@ -211,12 +221,19 @@ CREATE TABLE `tmp_stok` (
 -- ----------------------------
 -- Records of tmp_stok
 -- ----------------------------
-INSERT INTO `tmp_stok` VALUES ('BBI01002', '930');
-INSERT INTO `tmp_stok` VALUES ('DKL01001', '180');
+INSERT INTO `tmp_stok` VALUES ('BBI01002', '927');
+INSERT INTO `tmp_stok` VALUES ('DKL01001', '162');
 DROP TRIGGER IF EXISTS `update_counter_golongan`;
 DELIMITER ;;
 CREATE TRIGGER `update_counter_golongan` AFTER INSERT ON `obat` FOR EACH ROW BEGIN
 UPDATE golongan g SET g.counter = g.counter+1 WHERE g.id_golongan = NEW.id_golongan;
+END
+;;
+DELIMITER ;
+DROP TRIGGER IF EXISTS `kurangi_stok_obat`;
+DELIMITER ;;
+CREATE TRIGGER `kurangi_stok_obat` AFTER INSERT ON `penjualan_detail` FOR EACH ROW BEGIN
+UPDATE obat o SET o.stok = o.stok-NEW.qty WHERE o.id_obat = NEW.id_obat;
 END
 ;;
 DELIMITER ;
