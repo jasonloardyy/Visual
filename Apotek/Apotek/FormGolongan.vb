@@ -32,6 +32,7 @@ Public Class FormGolongan
         dgv.Columns(1).HeaderText = "Nama Golongan"
         dgv.Columns(0).Width = 100
         dgv.Columns(1).Width = 150
+        dgv.Columns(2).Visible = False
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgv.ReadOnly = True

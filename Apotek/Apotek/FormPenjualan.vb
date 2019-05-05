@@ -51,6 +51,8 @@ Public Class FormPenjualan
         dgvkeranjang.Columns(4).Width = 45
         dgvkeranjang.Columns(5).Width = 80
         dgvkeranjang.Columns(6).Width = 80
+        dgvkeranjang.Columns(5).DefaultCellStyle.Format = "n"
+        dgvkeranjang.Columns(6).DefaultCellStyle.Format = "n"
         dgvkeranjang.Columns(0).Visible = False
         dgvkeranjang.Columns(1).Visible = False
         objAlternatingCellStyle.BackColor = Color.AliceBlue
@@ -130,32 +132,12 @@ Public Class FormPenjualan
         Label9.Text = "Total = Rp. " & totalantrian
     End Sub
 
-    Sub tambah_tmp_stok()
-        Dim stokbaru As Integer = Convert.ToInt32(TextBox5.Text) - Convert.ToInt32(TextBox6.Text)
-        cmd = New MySqlCommand("SELECT * FROM tmp_stok WHERE tmp_id_obat = '" & TextBox3.Text & "'", konek)
-        dr = cmd.ExecuteReader
-        dr.Read()
-        If dr.HasRows Then
-            dr.Close()
-            Dim strEdit As String = "UPDATE tmp_stok SET tmp_stok_obat = tmp_stok_obat - " & TextBox6.Text & " " _
-                              & "WHERE tmp_id_obat = '" & TextBox3.Text & "'"
-            query(strEdit)
-        Else
-            dr.Close()
-            Dim strsimpan As String = "INSERT INTO tmp_stok" _
-                                & " VALUES ('" & TextBox3.Text & "','" & stokbaru & "')"
-            query(strsimpan)
-        End If
-
-    End Sub
-
     Sub ToKeranjang()
         no_urutkeranjang()
         Dim subtotal As Decimal = Convert.ToDecimal(TextBox6.Text) * Convert.ToDecimal(TextBox7.Text)
         Dim strsimpan As String = "INSERT INTO keranjang" _
                                 & " VALUES ('" & TextBox8.Text & "','" & no & "','" & TextBox3.Text & "','" & TextBox4.Text & "','" & TextBox6.Text & "','" & TextBox7.Text & "','" & subtotal & "')"
         query(strsimpan)
-        tambah_tmp_stok()
         isigridKeranjang()
         TextBox3.Clear()
         TextBox4.Clear()
@@ -170,6 +152,8 @@ Public Class FormPenjualan
             MsgBox("Silahkan pilih data obat!")
         ElseIf TextBox6.Text = "" Then
             MsgBox("Masukkan jumlah obat!")
+        ElseIf Convert.ToInt16(TextBox6.Text) > Convert.ToInt16(TextBox5.Text) Then
+            MsgBox("Stok tidak tersedia!")
         Else
             ToKeranjang()
         End If
@@ -179,6 +163,7 @@ Public Class FormPenjualan
         Dim strreset As String = "delete from keranjang where id_antrian = '" & TextBox8.Text & "'"
         query(strreset)
         dgvkeranjang.DataSource = Nothing
+        grandtotal()
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -266,9 +251,10 @@ Public Class FormPenjualan
         dgvantrian.Columns(0).HeaderText = "No."
         dgvantrian.Columns(2).HeaderText = "Nama Pelanggan"
         dgvantrian.Columns(3).HeaderText = "Total"
+        dgvantrian.Columns(3).DefaultCellStyle.Format = "n"
         dgvantrian.Columns(0).Width = 35
         dgvantrian.Columns(2).Width = 115
-        dgvantrian.Columns(3).Width = 65
+        dgvantrian.Columns(3).Width = 100
         dgvantrian.Columns(1).Visible = False
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgvantrian.SelectionMode = DataGridViewSelectionMode.FullRowSelect

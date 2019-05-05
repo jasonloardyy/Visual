@@ -34,3 +34,4 @@ C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormGolong
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormKategori.resources
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.Resources.resources
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.vbproj.GenerateResource.Cache
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormUtama.resources

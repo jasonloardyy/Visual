@@ -52,6 +52,7 @@ Partial Class FormObat
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -59,6 +60,7 @@ Partial Class FormObat
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button6)
         Me.GroupBox1.Controls.Add(Me.dgv)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -84,7 +86,7 @@ Partial Class FormObat
         '
         Me.TextBox1.Location = New System.Drawing.Point(100, 19)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(358, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(269, 20)
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.TabStop = False
         '
@@ -347,6 +349,15 @@ Partial Class FormObat
         Me.Button5.Text = "Keluar"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(375, 18)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(83, 23)
+        Me.Button6.TabIndex = 14
+        Me.Button6.Text = "Tampil Semua"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'FormObat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -396,4 +407,5 @@ Partial Class FormObat
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class

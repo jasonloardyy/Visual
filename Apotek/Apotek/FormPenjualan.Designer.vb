@@ -75,7 +75,7 @@ Partial Class FormPenjualan
         Me.GroupBox1.Controls.Add(Me.dgvantrian)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(290, 437)
+        Me.GroupBox1.Size = New System.Drawing.Size(328, 437)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Antrian"
@@ -84,14 +84,14 @@ Partial Class FormPenjualan
         '
         Me.Label9.Location = New System.Drawing.Point(6, 372)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(278, 13)
+        Me.Label9.Size = New System.Drawing.Size(316, 18)
         Me.Label9.TabIndex = 3
         Me.Label9.Text = "Total : Rp. 999.999.999"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(209, 405)
+        Me.Button6.Location = New System.Drawing.Point(247, 405)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 2
@@ -113,7 +113,7 @@ Partial Class FormPenjualan
         Me.dgvantrian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvantrian.Location = New System.Drawing.Point(6, 19)
         Me.dgvantrian.Name = "dgvantrian"
-        Me.dgvantrian.Size = New System.Drawing.Size(278, 350)
+        Me.dgvantrian.Size = New System.Drawing.Size(316, 350)
         Me.dgvantrian.TabIndex = 0
         '
         'GroupBox2
@@ -127,7 +127,7 @@ Partial Class FormPenjualan
         Me.GroupBox2.Controls.Add(Me.dgvkeranjang)
         Me.GroupBox2.Controls.Add(Me.GroupBox4)
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
-        Me.GroupBox2.Location = New System.Drawing.Point(308, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(346, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(650, 437)
         Me.GroupBox2.TabIndex = 1
@@ -420,7 +420,7 @@ Partial Class FormPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(970, 459)
+        Me.ClientSize = New System.Drawing.Size(1008, 459)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

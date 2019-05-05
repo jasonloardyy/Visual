@@ -15,7 +15,7 @@ Public Class FormObat
     End Sub
 
     Sub isigrid()
-        Dim query As String = "SELECT o.id_obat,o.nama_obat,k.nama_kategori,g.nama_golongan,p.nama_produksi,sd.nama_sediaan,st.nama_satuan,o.tgl_expired,o.stok,o.harga FROM obat o JOIN kategori k on k.id_kategori = o.id_kategori JOIN golongan g on g.id_golongan = o.id_golongan JOIN produksi p on p.id_produksi = o.id_produksi JOIN sediaan sd on sd.id_sediaan = o.id_sediaan JOIN satuan st on st.id_satuan = o.id_satuan"
+        Dim query As String = "SELECT o.id_obat,o.nama_obat,k.nama_kategori,g.nama_golongan,p.nama_produksi,sd.nama_sediaan,st.nama_satuan,o.tgl_expired,stok-(SELECT COALESCE(SUM(qty),0) FROM keranjang where id_obat = o.id_obat),o.harga FROM obat o JOIN kategori k on k.id_kategori = o.id_kategori JOIN golongan g on g.id_golongan = o.id_golongan JOIN produksi p on p.id_produksi = o.id_produksi JOIN sediaan sd on sd.id_sediaan = o.id_sediaan JOIN satuan st on st.id_satuan = o.id_satuan"
         Dim da As New MySqlDataAdapter(query, konek)
         Dim ds As New DataSet()
         If da.Fill(ds) Then
@@ -45,6 +45,7 @@ Public Class FormObat
         dgv.Columns(5).Visible = False
         dgv.Columns(6).Visible = False
         dgv.Columns(7).Visible = False
+        dgv.Columns(9).DefaultCellStyle.Format = "n"
         objAlternatingCellStyle.BackColor = Color.AliceBlue
         dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgv.ReadOnly = True
@@ -329,5 +330,9 @@ Public Class FormObat
                 Me.Close()
             End If
         End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        isigrid()
     End Sub
 End Class
