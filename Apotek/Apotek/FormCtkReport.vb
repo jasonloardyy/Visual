@@ -100,8 +100,8 @@ Public Class FormCtkReport
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim baris As Integer = dgvpenjualan.CurrentRow.Index
         Dim cno As String = dgvpenjualan.Item(0, baris).Value
-        FormCtkNota.CRNota1.RecordSelectionFormula = "{penjualan1.id_penjualan} = '" & cno & "'"
-        FormCtkNota.CRNota1.Refresh()
-        FormCtkNota.Show()
+        FormViewReport.CRNota1.RecordSelectionFormula = "{penjualan1.id_penjualan} = '" & cno & "'"
+        FormViewReport.CRNota1.Refresh()
+        FormViewReport.Show()
     End Sub
 End Class

@@ -35,5 +35,6 @@ C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormKatego
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.Resources.resources
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.vbproj.GenerateResource.Cache
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormUtama.resources
-C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormCtkNota.resources
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormCtkReport.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormCtkReportPeriode.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormViewReport.resources

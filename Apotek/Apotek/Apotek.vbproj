@@ -80,22 +80,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRHarian.vb">
+      <DependentUpon>CRHarian.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CRNota.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CRNota.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormCtkNota.Designer.vb">
-      <DependentUpon>FormCtkNota.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormCtkNota.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormCtkReport.Designer.vb">
       <DependentUpon>FormCtkReport.vb</DependentUpon>
     </Compile>
     <Compile Include="FormCtkReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCtkReportPeriode.Designer.vb">
+      <DependentUpon>FormCtkReportPeriode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCtkReportPeriode.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormObat.Designer.vb">
@@ -146,6 +152,12 @@
     <Compile Include="FormUtama.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormViewReport.Designer.vb">
+      <DependentUpon>FormViewReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -164,15 +176,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CRHarian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRHarian.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRNota.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRNota.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCtkNota.resx">
-      <DependentUpon>FormCtkNota.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormCtkReport.resx">
       <DependentUpon>FormCtkReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCtkReportPeriode.resx">
+      <DependentUpon>FormCtkReportPeriode.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormObat.resx">
       <DependentUpon>FormObat.vb</DependentUpon>
@@ -197,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewReport.resx">
+      <DependentUpon>FormViewReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
