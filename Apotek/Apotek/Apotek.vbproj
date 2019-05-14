@@ -46,6 +46,11 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MySql.Data">
       <HintPath>D:\Software\Navicate\MySql.Data.dll</HintPath>
     </Reference>
@@ -53,6 +58,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +80,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRNota.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRNota.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormCtkNota.Designer.vb">
+      <DependentUpon>FormCtkNota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCtkNota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCtkReport.Designer.vb">
+      <DependentUpon>FormCtkReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCtkReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormObat.Designer.vb">
       <DependentUpon>FormObat.vb</DependentUpon>
     </Compile>
@@ -139,6 +164,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CRNota.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRNota.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCtkNota.resx">
+      <DependentUpon>FormCtkNota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCtkReport.resx">
+      <DependentUpon>FormCtkReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormObat.resx">
       <DependentUpon>FormObat.vb</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +216,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
