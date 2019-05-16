@@ -25,6 +25,7 @@ Partial Class FormViewReport
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.CRHarian1 = New Apotek.CRHarian()
         Me.CRNota1 = New Apotek.CRNota()
+        Me.CRBulanan1 = New Apotek.CRBulanan()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -35,7 +36,7 @@ Partial Class FormViewReport
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.CRHarian1
+        Me.CrystalReportViewer1.ReportSource = Me.CRBulanan1
         Me.CrystalReportViewer1.ShowCloseButton = False
         Me.CrystalReportViewer1.ShowCopyButton = False
         Me.CrystalReportViewer1.ShowGroupTreeButton = False
@@ -51,7 +52,10 @@ Partial Class FormViewReport
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(879, 506)
         Me.Controls.Add(Me.CrystalReportViewer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FormViewReport"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormViewReport"
         Me.ResumeLayout(False)
 
@@ -59,4 +63,5 @@ Partial Class FormViewReport
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents CRNota1 As Apotek.CRNota
     Friend WithEvents CRHarian1 As Apotek.CRHarian
+    Friend WithEvents CRBulanan1 As Apotek.CRBulanan
 End Class

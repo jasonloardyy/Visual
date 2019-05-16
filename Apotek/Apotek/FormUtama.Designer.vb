@@ -33,12 +33,15 @@ Partial Class FormUtama
         Me.DataSediaanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BerdasarkanNotaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BerdasarkanPeriodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataMasterToolStripMenuItem, Me.TransaksiToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataMasterToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1184, 24)
@@ -55,14 +58,14 @@ Partial Class FormUtama
         'DataGolonganToolStripMenuItem
         '
         Me.DataGolonganToolStripMenuItem.Name = "DataGolonganToolStripMenuItem"
-        Me.DataGolonganToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DataGolonganToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.DataGolonganToolStripMenuItem.Text = "Data Obat"
         '
         'DataKategoriToolStripMenuItem
         '
         Me.DataKategoriToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataGolonganToolStripMenuItem1, Me.DataKategoriToolStripMenuItem1, Me.DataPenjualanToolStripMenuItem, Me.DataSatuanToolStripMenuItem, Me.DataSediaanToolStripMenuItem})
         Me.DataKategoriToolStripMenuItem.Name = "DataKategoriToolStripMenuItem"
-        Me.DataKategoriToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DataKategoriToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.DataKategoriToolStripMenuItem.Text = "Data Kecil"
         '
         'DataGolonganToolStripMenuItem1
@@ -108,6 +111,25 @@ Partial Class FormUtama
         Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
         Me.PenjualanToolStripMenuItem.Text = "Penjualan"
         '
+        'LaporanToolStripMenuItem
+        '
+        Me.LaporanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BerdasarkanNotaToolStripMenuItem, Me.BerdasarkanPeriodeToolStripMenuItem})
+        Me.LaporanToolStripMenuItem.Name = "LaporanToolStripMenuItem"
+        Me.LaporanToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.LaporanToolStripMenuItem.Text = "Laporan"
+        '
+        'BerdasarkanNotaToolStripMenuItem
+        '
+        Me.BerdasarkanNotaToolStripMenuItem.Name = "BerdasarkanNotaToolStripMenuItem"
+        Me.BerdasarkanNotaToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.BerdasarkanNotaToolStripMenuItem.Text = "Berdasarkan Nota"
+        '
+        'BerdasarkanPeriodeToolStripMenuItem
+        '
+        Me.BerdasarkanPeriodeToolStripMenuItem.Name = "BerdasarkanPeriodeToolStripMenuItem"
+        Me.BerdasarkanPeriodeToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.BerdasarkanPeriodeToolStripMenuItem.Text = "Berdasarkan Periode"
+        '
         'FormUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -137,4 +159,7 @@ Partial Class FormUtama
     Friend WithEvents DataPenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataSatuanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataSediaanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BerdasarkanNotaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BerdasarkanPeriodeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

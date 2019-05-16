@@ -28,9 +28,9 @@ Partial Class FormCtkReport
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvdetail = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.dgvpenjualan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -96,6 +96,15 @@ Partial Class FormCtkReport
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detail Obat"
         '
+        'Label3
+        '
+        Me.Label3.Location = New System.Drawing.Point(9, 285)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(491, 15)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Grand Total : Rp. 999,999,999"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -114,15 +123,6 @@ Partial Class FormCtkReport
         Me.dgvdetail.Size = New System.Drawing.Size(494, 237)
         Me.dgvdetail.TabIndex = 0
         '
-        'Label3
-        '
-        Me.Label3.Location = New System.Drawing.Point(9, 285)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(491, 15)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Grand Total : Rp. 999,999,999"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        '
         'FormCtkReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -131,7 +131,10 @@ Partial Class FormCtkReport
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FormCtkReport"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormCtkReport"
         CType(Me.dgvpenjualan, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

@@ -1,4 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports CrystalDecisions.CrystalReports.Engine
+Imports System.IO
 
 Public Class FormCtkReport
     Public id_data As String
@@ -97,11 +99,13 @@ Public Class FormCtkReport
         isigridpenj()
     End Sub
 
+
+
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim baris As Integer = dgvpenjualan.CurrentRow.Index
         Dim cno As String = dgvpenjualan.Item(0, baris).Value
         FormViewReport.CRNota1.RecordSelectionFormula = "{penjualan1.id_penjualan} = '" & cno & "'"
-        FormViewReport.CRNota1.Refresh()
         FormViewReport.Show()
     End Sub
 End Class

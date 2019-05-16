@@ -80,6 +80,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRBulanan.vb">
+      <DependentUpon>CRBulanan.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CRHarian.vb">
       <DependentUpon>CRHarian.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -176,6 +182,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CRBulanan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBulanan.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRHarian.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRHarian.vb</LastGenOutput>

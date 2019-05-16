@@ -27,4 +27,12 @@
     Private Sub DataSediaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataSediaanToolStripMenuItem.Click
         FormSediaan.Show()
     End Sub
+
+    Private Sub BerdasarkanNotaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BerdasarkanNotaToolStripMenuItem.Click
+        FormCtkReport.Show()
+    End Sub
+
+    Private Sub BerdasarkanPeriodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BerdasarkanPeriodeToolStripMenuItem.Click
+        FormCtkReportPeriode.Show()
+    End Sub
 End Class
