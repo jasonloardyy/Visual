@@ -80,6 +80,42 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRTahunanProObat.vb">
+      <DependentUpon>CRTahunanProObat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRBulananProObat.vb">
+      <DependentUpon>CRBulananProObat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRTahunanPro.vb">
+      <DependentUpon>CRTahunanPro.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRBulananPro.vb">
+      <DependentUpon>CRBulananPro.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRTahunanGol.vb">
+      <DependentUpon>CRTahunanGol.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRTahunanGolObat.vb">
+      <DependentUpon>CRTahunanGolObat.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="CRBulananGolObat.vb">
       <DependentUpon>CRBulananGolObat.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -88,6 +124,12 @@
     </Compile>
     <Compile Include="CRBulananGol.vb">
       <DependentUpon>CRBulananGol.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CRTahunanObat.vb">
+      <DependentUpon>CRTahunanObat.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -206,6 +248,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CRTahunanProObat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTahunanProObat.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRBulananProObat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBulananProObat.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRTahunanPro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTahunanPro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRBulananPro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBulananPro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRTahunanGol.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTahunanGol.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRTahunanGolObat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTahunanGolObat.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CRBulananGolObat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRBulananGolObat.vb</LastGenOutput>
@@ -213,6 +279,10 @@
     <EmbeddedResource Include="CRBulananGol.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRBulananGol.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRTahunanObat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTahunanObat.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CRBulananObat.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
