@@ -9,6 +9,7 @@ Module Module1
     Public cmd As New MySqlCommand
     Public dt As DataTable
     Public dr As MySqlDataReader
+    Public dtgl As String
     Public Function koneksi() As Boolean
         Try
             If konek.State = ConnectionState.Closed Then

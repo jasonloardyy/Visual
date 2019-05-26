@@ -139,6 +139,7 @@ Public Class FormPenjualan
                                 & " VALUES ('" & TextBox8.Text & "','" & no & "','" & TextBox3.Text & "','" & TextBox4.Text & "','" & TextBox6.Text & "','" & TextBox7.Text & "','" & subtotal & "')"
         query(strsimpan)
         isigridKeranjang()
+        refreshantrian()
         TextBox3.Clear()
         TextBox4.Clear()
         TextBox7.Clear()
@@ -260,6 +261,14 @@ Public Class FormPenjualan
         dgvantrian.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgvantrian.ReadOnly = True
     End Sub
+
+    Sub refreshantrian()
+        Dim strEdit As String = "UPDATE antrian SET nama = '" & TextBox2.Text.ToUpper & "',total = '" & Convert.ToDecimal(total) & "'" _
+                              & " WHERE id_antrian = '" & TextBox8.Text & "'"
+        query(strEdit)
+        isigridantrian()
+    End Sub
+
 
     Sub querytambahantrian()
         cmd = New MySqlCommand("SELECT * FROM antrian WHERE id_antrian = '" & TextBox8.Text & "'", konek)
