@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormCtkReportPeriode
+Partial Class FormCtkGrafikPeriode
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -261,7 +261,7 @@ Partial Class FormCtkReportPeriode
         Me.CheckBox4.Text = "Berdasarkan Produksi Obat"
         Me.CheckBox4.UseVisualStyleBackColor = True
         '
-        'FormCtkReportPeriode
+        'FormCtkGrafikPeriode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -271,9 +271,9 @@ Partial Class FormCtkReportPeriode
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "FormCtkReportPeriode"
+        Me.Name = "FormCtkGrafikPeriode"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormCtkReportPeriode"
+        Me.Text = "Form Grafik"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

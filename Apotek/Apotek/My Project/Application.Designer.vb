@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Apotek.FormUtama
+            Me.MainForm = Global.Apotek.FormCtkGrafikPeriode
         End Sub
     End Class
 End Namespace

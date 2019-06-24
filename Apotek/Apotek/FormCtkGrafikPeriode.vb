@@ -1,7 +1,7 @@
 ﻿Imports CrystalDecisions.CrystalReports.Engine
 Imports System.IO
 
-Public Class FormCtkReportPeriode
+Public Class FormCtkGrafikPeriode
 
     Sub cb_tahun()
         Dim q As String = "SELECT DISTINCT LEFT(tanggal,4) AS Tahun FROM penjualan order by tahun"
@@ -58,81 +58,41 @@ Public Class FormCtkReportPeriode
         Dim RepLocation = Path.GetFullPath( _
                 Path.Combine(Application.StartupPath, "..\.."))
         If RadioButton1.Checked = True And CheckBox1.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianObat.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} = Date('" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_harian_obat()
+            FormGrafik.Show()
         ElseIf RadioButton1.Checked = True And CheckBox2.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianGol.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} = Date('" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_harian_gol_obat()
+            FormGrafik.Show()
         ElseIf RadioButton1.Checked = True And CheckBox5.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianPro.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} = Date('" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_harian_pro_obat()
+            FormGrafik.Show()
         ElseIf RadioButton1.Checked = True And CheckBox3.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianGolObat.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} = Date('" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')" & _
-                                                " and {obat1.id_golongan} = '" & ComboBox4.SelectedValue & "'"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_harian_gol_obat_all()
+            FormGrafik.Show()
         ElseIf RadioButton1.Checked = True And CheckBox4.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianProObat.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} = Date('" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')" & _
-                                                " and {obat1.id_produksi} = '" & ComboBox5.SelectedValue & "'"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_harian_pro_obat_all()
+            FormGrafik.Show()
         ElseIf RadioButton1.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarian.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} = Date('" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_harian()
+            FormGrafik.Show()
         ElseIf RadioButton4.Checked = True And CheckBox1.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianObat.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} >= Date('" & Format(DateTimePicker2.Value, "yyyy-MM-dd") & "') and {penjualan1.tanggal} <= Date('" & Format(DateTimePicker3.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_periode_harian_obat()
+            FormGrafik.Show()
         ElseIf RadioButton4.Checked = True And CheckBox2.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianGol.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} >= Date('" & Format(DateTimePicker2.Value, "yyyy-MM-dd") & "') and {penjualan1.tanggal} <= Date('" & Format(DateTimePicker3.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_periode_harian_gol_obat()
+            FormGrafik.Show()
         ElseIf RadioButton4.Checked = True And CheckBox5.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianPro.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} >= Date('" & Format(DateTimePicker2.Value, "yyyy-MM-dd") & "') and {penjualan1.tanggal} <= Date('" & Format(DateTimePicker3.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_periode_harian_pro_obat()
+            FormGrafik.Show()
         ElseIf RadioButton4.Checked = True And CheckBox3.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianGolObat.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} >= Date('" & Format(DateTimePicker2.Value, "yyyy-MM-dd") & "') and {penjualan1.tanggal} <= Date('" & Format(DateTimePicker3.Value, "yyyy-MM-dd") & "')" & _
-                                                " and {obat1.id_golongan} = '" & ComboBox4.SelectedValue & "'"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_periode_harian_gol_obat_all()
+            FormGrafik.Show()
         ElseIf RadioButton4.Checked = True And CheckBox4.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarianProObat.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} >= Date('" & Format(DateTimePicker2.Value, "yyyy-MM-dd") & "') and {penjualan1.tanggal} <= Date('" & Format(DateTimePicker3.Value, "yyyy-MM-dd") & "')" & _
-                                                " and {obat1.id_produksi} = '" & ComboBox5.SelectedValue & "'"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_periode_harian_pro_obat_all()
+            FormGrafik.Show()
         ElseIf RadioButton4.Checked = True Then
-            cryReport.Load(RepLocation & "\CRHarian.rpt")
-            cryReport.RecordSelectionFormula = "{penjualan1.tanggal} >= Date('" & Format(DateTimePicker2.Value, "yyyy-MM-dd") & "') and {penjualan1.tanggal} <= Date('" & Format(DateTimePicker3.Value, "yyyy-MM-dd") & "')"
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_periode_harian()
+            FormGrafik.Show()
         ElseIf RadioButton2.Checked = True And CheckBox1.Checked = True Then
             cryReport.Load(RepLocation & "\CRBulananObat.rpt")
             cryReport.RecordSelectionFormula = "Month({penjualan1.tanggal}) = " & ComboBox1.SelectedValue & " and Year({penjualan1.tanggal}) = " & ComboBox2.SelectedValue
@@ -166,11 +126,8 @@ Public Class FormCtkReportPeriode
             FormViewReport.CrystalReportViewer1.Refresh()
             FormViewReport.Show()
         ElseIf RadioButton2.Checked = True Then
-            cryReport.Load(RepLocation & "\CRBulanan.rpt")
-            cryReport.RecordSelectionFormula = "Month({penjualan1.tanggal}) = " & ComboBox1.SelectedValue & " and Year({penjualan1.tanggal}) = " & ComboBox2.SelectedValue
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_bulanan()
+            FormGrafik.Show()
         ElseIf RadioButton3.Checked = True And CheckBox1.Checked = True Then
             cryReport.Load(RepLocation & "\CRTahunanObat.rpt")
             cryReport.RecordSelectionFormula = "Year({penjualan1.tanggal}) = " & ComboBox3.SelectedValue
@@ -204,11 +161,8 @@ Public Class FormCtkReportPeriode
             FormViewReport.CrystalReportViewer1.Refresh()
             FormViewReport.Show()
         ElseIf RadioButton3.Checked = True Then
-            cryReport.Load(RepLocation & "\CRTahunan.rpt")
-            cryReport.RecordSelectionFormula = "Year({penjualan1.tanggal}) = " & ComboBox3.SelectedValue
-            FormViewReport.CrystalReportViewer1.ReportSource = cryReport
-            FormViewReport.CrystalReportViewer1.Refresh()
-            FormViewReport.Show()
+            FormGrafik.grafik_penjualan_tahunan()
+            FormGrafik.Show()
         End If
 
     End Sub
@@ -274,4 +228,5 @@ Public Class FormCtkReportPeriode
             CheckBox4.Checked = False
         End If
     End Sub
+
 End Class

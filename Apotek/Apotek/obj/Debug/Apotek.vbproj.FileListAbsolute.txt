@@ -38,3 +38,5 @@ C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormUtama.
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormCtkReport.resources
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormCtkReportPeriode.resources
 C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormViewReport.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormGrafik.resources
+C:\Users\Jason\Documents\GitHub\Visual\Apotek\Apotek\obj\Debug\Apotek.FormCtkGrafikPeriode.resources
