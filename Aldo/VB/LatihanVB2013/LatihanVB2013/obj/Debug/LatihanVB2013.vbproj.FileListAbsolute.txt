@@ -1,0 +1,30 @@
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\bin\Debug\LatihanVB2013.exe.config
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\bin\Debug\LatihanVB2013.exe
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\bin\Debug\LatihanVB2013.pdb
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\bin\Debug\LatihanVB2013.xml
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\bin\Debug\MySql.Data.dll
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.vbprojResolveAssemblyReference.cache
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Form1.resources
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Resources.resources
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.vbproj.GenerateResource.Cache
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.exe
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.xml
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.pdb
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Form2.resources
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Form3.resources
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Form5.resources
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Form6.resources
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\bin\Debug\Interop.MSChart20Lib.dll
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\bin\Debug\AxInterop.MSChart20Lib.dll
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\Interop.MSChart20Lib.dll
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\Interop.MSDATASRC.dll
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\AxInterop.MSChart20Lib.dll
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.vbproj.ResolveComReference.cache
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Form7.resources
+D:\Drive_D\Bhn_Kuliah\VB2013\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.Form8.resources
+D:\Tugas\SEMESTER 6\VB\LatihanVB2013\LatihanVB2013\bin\Debug\LatihanVB2013.exe.config
+D:\Tugas\SEMESTER 6\VB\LatihanVB2013\LatihanVB2013\obj\Debug\Interop.MSDATASRC.dll
+D:\Tugas\SEMESTER 6\VB\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.vbproj.ResolveComReference.cache
+D:\Tugas\SEMESTER 6\VB\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.exe
+D:\Tugas\SEMESTER 6\VB\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.xml
+D:\Tugas\SEMESTER 6\VB\LatihanVB2013\LatihanVB2013\obj\Debug\LatihanVB2013.pdb

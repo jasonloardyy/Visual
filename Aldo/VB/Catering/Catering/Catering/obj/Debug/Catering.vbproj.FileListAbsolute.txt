@@ -1,0 +1,33 @@
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\bin\Debug\Catering.exe.config
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\bin\Debug\Catering.exe
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\bin\Debug\Catering.pdb
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\bin\Debug\Catering.xml
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\bin\Debug\MySql.Data.dll
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.vbprojResolveAssemblyReference.cache
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.Resources.resources
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.vbproj.GenerateResource.Cache
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.exe
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.xml
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.pdb
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.konsumen.resources
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.makanan.resources
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.kurir.resources
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.FormPaket.resources
+D:\Tugas\SEMESTER 6\VB\Catering\Catering\Catering\obj\Debug\Catering.paket.resources
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\bin\Debug\Catering.exe.config
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.exe
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.xml
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.pdb
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\bin\Debug\Catering.exe
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\bin\Debug\Catering.pdb
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\bin\Debug\Catering.xml
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\bin\Debug\MySql.Data.dll
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.vbprojResolveAssemblyReference.cache
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.FormPaket.resources
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.kurir.resources
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.konsumen.resources
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.makanan.resources
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.Resources.resources
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.paket.resources
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.vbproj.GenerateResource.Cache
+C:\Users\Jason\Documents\GitHub\Visual\Aldo\VB\Catering\Catering\Catering\obj\Debug\Catering.Formtransaksi.resources

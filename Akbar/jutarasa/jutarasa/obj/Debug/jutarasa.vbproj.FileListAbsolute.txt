@@ -1,0 +1,13 @@
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\bin\Debug\jutarasa.exe.config
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.vbprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.Form1.resources
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.Resources.resources
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.vbproj.GenerateResource.Cache
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\bin\Debug\jutarasa.exe
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\bin\Debug\jutarasa.pdb
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\bin\Debug\jutarasa.xml
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\bin\Debug\MySql.Data.dll
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.exe
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.xml
+c:\users\lenovo\documents\visual studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.pdb
+C:\Users\LENOVO\Documents\Visual Studio 2013\Projects\jutarasa\jutarasa\obj\Debug\jutarasa.Form2.resources
